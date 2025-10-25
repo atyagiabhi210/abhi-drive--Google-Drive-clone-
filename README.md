@@ -3,15 +3,15 @@
 ## TODO
 
 - [x] Setup data base and data model
-- [ ] Move folder open state to url
+- [x] Move folder open state to url
 - [ ] Add auth
 - [ ] Add file uploading
+- [ ] Add analytics
 
 ## Note from 25-10-25
 
 Just finished db setup and connection
 
-- [x] update schema to show files and folders
-- [x] Manually insert examples
-- [x] Render them in the ui
-- [x] Push and make sure it all works
+- [ ] Change folders to link components, remove all client state
+- [ ] Clean up the database and data fetching patterns
+- [ ] Real Homepage
