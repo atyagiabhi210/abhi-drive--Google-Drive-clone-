@@ -1,3 +1,5 @@
+import "server-only";
+// gurrantees that the schema is only used on the server we will get a runtime error if we try to use it on the client
 import {
   int,
   text,
