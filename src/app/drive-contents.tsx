@@ -10,9 +10,8 @@ import Link from "next/link";
 export default function DriveContents(props: {
   files: (typeof files.$inferInsert)[];
   folders: (typeof folders.$inferInsert)[];
+  parents: (typeof folders.$inferSelect)[];
 }) {
-  const breadcrumbs = [];
-
   const handleUpload = () => {
     alert("Upload functionality would be implemented here");
   };
@@ -25,16 +24,17 @@ export default function DriveContents(props: {
             <Link href="/f/1" className="mr-2 text-gray-300 hover:text-white">
               My Drive
             </Link>
-            {breadcrumbs.map((folder) => (
-              <div key={folder.id} className="flex items-center">
+            {props.parents.map((folder) => (
+              <Link
+                key={folder.id}
+                href={`/f/${folder.id}`}
+                className="mx-2 flex items-center text-gray-300 hover:text-white"
+              >
                 <ChevronRight className="mx-2 text-gray-500" size={16} />
-                <Link
-                  href={`/f/${folder.id}`}
-                  className="text-gray-300 hover:text-white"
-                >
+                <span className="text-gray-300 hover:text-white">
                   {folder.name}
-                </Link>
-              </div>
+                </span>
+              </Link>
             ))}
           </div>
           <Button
