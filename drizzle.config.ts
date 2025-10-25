@@ -7,11 +7,11 @@ export default {
   dialect: "singlestore",
   tablesFilter: ["abhi-drive_*"],
   dbCredentials: {
-    host: env.SINGLESTORE_HOST,
-    port: parseInt(env.SINGLESTORE_PORT),
-    user: env.SINGLESTORE_USER,
-    password: env.SINGLESTORE_PASS,
-    database: env.SINGLESTORE_DB_NAME,
+    host: env.SINGLESTORE_HOST ?? "",
+    port: parseInt(env.SINGLESTORE_PORT ?? "3306"),
+    user: env.SINGLESTORE_USER ?? "",
+    password: env.SINGLESTORE_PASS ?? "",
+    database: env.SINGLESTORE_DB_NAME ?? "",
     ssl: {},
   },
 } satisfies Config;
