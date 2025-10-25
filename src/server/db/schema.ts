@@ -12,7 +12,7 @@ export const createTable = singlestoreTableCreator(
   (name) => `abhi-drive_${name}`,
 );
 
-export const files = createTable(
+export const files_table = createTable(
   "file_table",
   {
     id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
@@ -26,7 +26,7 @@ export const files = createTable(
   },
 );
 
-export const folders = createTable(
+export const folders_table = createTable(
   "folder_table",
   {
     id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),

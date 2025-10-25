@@ -4,13 +4,13 @@ import { useMemo, useState } from "react";
 import { Upload, ChevronRight } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FileRow, FolderRow } from "./file-row";
-import type { files, folders } from "~/server/db/schema";
+import type { files_table, folders_table } from "~/server/db/schema";
 import Link from "next/link";
 
 export default function DriveContents(props: {
-  files: (typeof files.$inferInsert)[];
-  folders: (typeof folders.$inferInsert)[];
-  parents: (typeof folders.$inferSelect)[];
+  files: (typeof files_table.$inferInsert)[];
+  folders: (typeof folders_table.$inferInsert)[];
+  parents: (typeof folders_table.$inferSelect)[];
 }) {
   const handleUpload = () => {
     alert("Upload functionality would be implemented here");
@@ -57,11 +57,14 @@ export default function DriveContents(props: {
             {props.folders.map((folder) => (
               <FolderRow
                 key={folder.id}
-                folder={folder as typeof folders.$inferSelect}
+                folder={folder as typeof folders_table.$inferSelect}
               />
             ))}
             {props.files.map((file) => (
-              <FileRow key={file.id} file={file as typeof files.$inferSelect} />
+              <FileRow
+                key={file.id}
+                file={file as typeof files_table.$inferSelect}
+              />
             ))}
           </ul>
         </div>
