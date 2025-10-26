@@ -8,10 +8,9 @@
 - [ ] Add file uploading
 - [ ] Add analytics
 
-## Note from 25-10-25
+## Note from 26-10-25
 
-Just finished db setup and connection
-
-- [ ] Change folders to link components, remove all client state
-- [ ] Clean up the database and data fetching patterns
 - [ ] Real Homepage
+- [ ] Upload files to the right folder
+- [ ] Delete files button
+- [ ] Allow files that aren't images to be uploaded

@@ -19,7 +19,7 @@ export const env = createEnv({
     SINGLESTORE_HOST: z.string().optional(),
     SINGLESTORE_PORT: z.string().optional(),
     SINGLESTORE_DB_NAME: z.string().optional(),
-    UPLOADTHING_SECRET: z.string().optional(),
+    UPLOADTHING_TOKEN: z.string().optional(),
   },
 
   /**
@@ -44,7 +44,7 @@ export const env = createEnv({
     SINGLESTORE_HOST: process.env.SINGLESTORE_HOST,
     SINGLESTORE_PORT: process.env.SINGLESTORE_PORT,
     SINGLESTORE_DB_NAME: process.env.SINGLESTORE_DB_NAME,
-    UPLOADTHING_SECRET: process.env.UPLOADTHING_SECRET,
+    UPLOADTHING_TOKEN: process.env.UPLOADTHING_TOKEN,
 
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },

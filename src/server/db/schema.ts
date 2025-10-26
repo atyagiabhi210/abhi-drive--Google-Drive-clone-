@@ -37,3 +37,6 @@ export const folders_table = createTable(
     return [index("parent_index").on(t.parent)]; // helps to look up folders by parent id aswell index this on the parent look up all the folders based on their parent id
   },
 );
+
+export type DB_FileType = typeof files_table.$inferSelect;
+export type DB_FolderType = typeof folders_table.$inferSelect;

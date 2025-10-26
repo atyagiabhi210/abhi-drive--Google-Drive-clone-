@@ -37,3 +37,20 @@ export const QUERIES = {
       .where(eq(foldersScheme.parent, folderId));
   },
 };
+
+export const MUTATIONS = {
+  createFile: async function (input: {
+    file: {
+      name: string;
+      url: string;
+      size: number;
+      parent: number;
+    };
+    userId: string;
+  }) {
+    return await db.insert(filesScheme).values({
+      ...input.file,
+      parent: 1,
+    });
+  },
+};
